@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "delivery-front": {
+    "social-network-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/delivery-front",
+            "outputPath": "dist/social-network-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -117,10 +117,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "delivery-front:build:production"
+              "browserTarget": "social-network-frontend:build:production"
             },
             "local": {
-              "browserTarget": "delivery-front:build:local"
+              "browserTarget": "social-network-frontend:build:local"
             }
           },
           "defaultConfiguration": "local"
@@ -128,7 +128,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "delivery-front:build"
+            "browserTarget": "social-network-frontend:build"
           }
         },
         "test": {

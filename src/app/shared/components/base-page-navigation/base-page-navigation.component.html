@@ -1,0 +1,6 @@
+<div *ngIf="elements" class="report-navigation-container">
+  <a *ngFor="let link of elements" mat-button [routerLink]="'..'+ link.link" [ngClass]="getRouteClass([link.link])"
+     routerLinkActive="active"
+     class="nav-link-element">{{link.title}}</a>
+</div>
+

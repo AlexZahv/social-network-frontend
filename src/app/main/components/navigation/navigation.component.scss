@@ -1,0 +1,83 @@
+@import "src/variables.scss";
+
+.mat-toolbar.mat-primary {
+  background-color: $navbar-theme-color !important;
+
+  .mat-toolbar-row {
+    padding-left: 20px;
+
+    .toolbar-row-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      .mat-button {
+        font-size: $navbar-font-size;
+
+        &:hover {
+          cursor: pointer;
+          color: #55B1DE;
+        }
+      }
+
+      .mat-button.active-link {
+        color: #55B1DE;
+      }
+    }
+  }
+
+  .mat-toolbar-row.header-block {
+    //padding-left: 36px;
+    padding-right: 36px;
+    height: 68px;
+    width: 100%;
+    background-color: #7EB09B;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .header-block-logo-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .header-block-logo-image {
+        width: 35px;
+        margin-right: 10px;
+      }
+
+      .header-block-logo-text {
+        font-family: Roboto, serif;
+        font-size: 23px;
+        line-height: 32px;
+        font-weight: 500;
+        font-style: normal;
+        color: black;
+      }
+    }
+
+    .header-block-logout-btn {
+
+      .logout-btn {
+        font-family: Roboto, serif;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        font-style: normal;
+        color: black;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+
+        &:hover {
+          cursor: pointer;
+          color: white;
+        }
+      }
+    }
+  }
+}

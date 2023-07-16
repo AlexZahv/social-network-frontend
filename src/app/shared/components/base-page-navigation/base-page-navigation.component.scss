@@ -1,0 +1,23 @@
+@import "src/variables";
+
+.report-navigation-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+
+  .nav-link-element {
+    border-radius: 0;
+    border-bottom: 1px solid lightgray;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 36px;
+    color: $main-theme-dark-text;
+
+
+    &:hover, &.active-link {
+      border-bottom: 1px solid black;
+    }
+  }
+}

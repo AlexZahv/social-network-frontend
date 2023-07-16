@@ -1,0 +1,32 @@
+<div class="current-user-container-row">
+
+  <div class="current-user-container-column">
+    <h2>Current user information</h2>
+    <div *ngIf="user" class="user-info-container">
+      <div *ngIf="user.id" class="user-info-row">
+        <span class="user-info-property">User ID:</span> <span class="user-info-property-value">{{user.id}}</span>
+      </div>
+      <div *ngIf="user.firstName" class="user-info-row">
+        <span class="user-info-property">First name:</span> <span class="user-info-property-value">{{user.firstName}}</span>
+      </div>
+      <div *ngIf="user.secondName" class="user-info-row">
+        <span class="user-info-property">Second name:</span> <span class="user-info-property-value">{{user.secondName}}</span>
+      </div>
+      <div *ngIf="user.age" class="user-info-row">
+        <span class="user-info-property">Age:</span> <span class="user-info-property-value">{{user.age}}</span>
+      </div>
+      <div *ngIf="user.sex" class="user-info-row">
+        <span class="user-info-property">Sex: </span><span class="user-info-property-value">{{user.sex}}</span>
+      </div>
+      <div *ngIf="user.birthdate" class="user-info-row">
+        <span class="user-info-property">Birthdate:</span> <span class="user-info-property-value">{{user.birthdate}}</span>
+      </div>
+      <div *ngIf="user.biography" class="user-info-row">
+        <span class="user-info-property">Biography:</span> <span class="user-info-property-value">{{user.biography}}</span>
+      </div>
+      <div *ngIf="user.city" class="user-info-row">
+        <span class="user-info-property">City:</span> <span class="user-info-property-value">{{user.city}}</span>
+      </div>
+    </div>
+  </div>
+</div>

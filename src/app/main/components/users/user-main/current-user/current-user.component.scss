@@ -1,0 +1,33 @@
+.current-user-container-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 20px;
+
+  .current-user-container-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 20px;
+  }
+
+  .user-info-container {
+    width: 400px;
+    background-color: #DBF8ECFF;
+    padding: 10px;
+
+    .user-info-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .user-info-property {
+        font-weight: bold;
+      }
+      .user-info-property-value {
+        font-weight: normal;
+        font-style: italic;
+      }
+    }
+  }
+}

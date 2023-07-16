@@ -1,0 +1,16 @@
+<mat-card class="mat-card-block base-grid">
+  <div class="base-grid-title-block">
+    <div class="base-grid-title-label">
+      {{title}}
+    </div>
+    <div class="base-grid-title-btn" *ngIf="excelExportEnabled">
+      <button mat-raised-button
+              class="primary-btn"
+              type="button"
+              (click)="exportExcel()"
+      >Выгрузить в Excel
+      </button>
+    </div>
+  </div>
+  <ng-content></ng-content>
+</mat-card>

@@ -1,0 +1,4 @@
+<div class="footer-block" *ngIf="appVersion; else emptyVersion">v{{appVersion}}</div>
+<ng-template #emptyVersion>
+  <div class="main-background-color">.</div>
+</ng-template>

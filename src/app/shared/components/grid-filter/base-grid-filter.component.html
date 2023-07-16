@@ -1,0 +1,19 @@
+<mat-card class="mat-card-block base-filter-container">
+  <app-page-navigation *ngIf="navigationElements" [elements]="navigationElements"></app-page-navigation>
+  <div class="base-filter-title-block" *ngIf="showFilterTitle">
+    <div class="base-filter-title-label">
+      Фильтрация
+    </div>
+    <div class="base-filter-title-btn">
+      <button mat-raised-button
+              class="clean-filter-btn basic-btn"
+              type="button"
+              (click)="isFilterHidden = !isFilterHidden"
+      >{{isFilterHidden ? 'Показать фильтр' : 'Свернуть фильтр'}}
+      </button>
+    </div>
+  </div>
+  <div *ngIf="!isFilterHidden">
+    <ng-content></ng-content>
+  </div>
+</mat-card>

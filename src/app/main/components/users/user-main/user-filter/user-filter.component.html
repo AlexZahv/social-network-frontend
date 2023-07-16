@@ -1,0 +1,46 @@
+<form ngForm #searchForm class="user-filter-container" (ngSubmit)="userFilterIsValid() && submitSearch()">
+  <div class="user-filter-element">
+    <mat-form-field
+      appearance="fill"
+      [floatLabel]="'never'"
+    >
+      <input matInput
+             maxlength="50"
+             inputmode="text"
+             placeholder="First name"
+             [(ngModel)]="filter.firstName"
+             required
+             name="firstName"
+             minlength="3"
+      >
+      <mat-error *ngIf="!filter || !filter.firstName || filter.firstName.trim() == ''">First name is required
+      </mat-error>
+      <mat-error *ngIf="!filter || !filter.firstName || filter.firstName.trim().length < 3">Minimal length 3 is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="user-filter-element">
+    <mat-form-field
+      appearance="fill"
+      [floatLabel]="'never'"
+    >
+      <input matInput
+             maxlength="50"
+             inputmode="text"
+             placeholder="Second name"
+             [(ngModel)]="filter.lastName"
+             required
+             name="secondName"
+             minlength="3"
+      >
+      <mat-error *ngIf="!filter || !filter.lastName || filter.lastName.trim() == ''">Second name is required
+      </mat-error>
+      <mat-error *ngIf="!filter || !filter.lastName || filter.lastName.trim().length < 3">Minimal length 3 is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="user-filter-btn-block user-filter-element">
+    <button mat-raised-button class="login-btn primary-btn" type="submit">Search users</button>
+  </div>
+</form>

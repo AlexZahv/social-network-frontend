@@ -1,0 +1,49 @@
+<div class="login-main">
+  <div class="login-row">
+    <form class="login-container" (ngSubmit)="loginForm.valid && onClick()" [formGroup]="loginForm">
+      <div class="login-container-title-block">
+        <div class="login-container-title">
+          Social network
+        </div>
+      </div>
+      <div class="login-container-form-block">
+        <div class="login-container-input">
+          <mat-form-field
+            appearance="fill"
+            [floatLabel]="'never'"
+          >
+            <input matInput maxlength="50"
+                   inputmode="text"
+                   placeholder="User ID"
+                   formControlName="id"
+                   required
+            >
+            <mat-error *ngIf="loginForm.get('id')!.hasError('required')">User ID is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="login-container-input">
+          <mat-form-field appearance="fill">
+            <input matInput
+                   maxlength="50"
+                   type="password"
+                   placeholder="Password"
+                   [name]="'password'"
+                   formControlName="password"
+                   required
+            >
+            <mat-error *ngIf="loginForm.get('password')!.hasError('required')">Password is required</mat-error>
+          </mat-form-field>
+        </div>
+
+      </div>
+      <div>
+        <mat-divider class="divider-line"></mat-divider>
+      </div>
+
+      <div class="login-container-actions">
+        <button mat-raised-button class="login-btn primary-btn" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+
+</div>

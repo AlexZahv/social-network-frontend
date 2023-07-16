@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="header-block">
+    <div class="header-block-logo-container"
+         [routerLink]="'users'"
+         routerLinkActive="active"
+    >
+      <div>
+        <img src="assets/img/colored-new.png" class="header-block-logo-image"/>
+      </div>
+      <div class="header-block-logo-text">
+        <div>
+          Social network
+        </div>
+      </div>
+    </div>
+    <div class="header-block-logout-btn">
+      <a class="logout-btn" (click)="logout()">Logout</a>
+    </div>
+  </mat-toolbar-row>
+<!--  <mat-toolbar-row>-->
+
+<!--  </mat-toolbar-row>-->
+</mat-toolbar>

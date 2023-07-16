@@ -1,0 +1,56 @@
+<div class="user-list-container">
+  <table *ngIf="searchResultList && searchResultList.length > 0" class="user-list-table">
+    <tr>
+      <td class="user-list-table-item">
+        User ID
+      </td>
+      <td class="user-list-table-item">
+        First name
+      </td>
+      <td class="user-list-table-item">
+        Second name
+      </td>
+      <td class="user-list-table-item">
+        Sex
+      </td>
+      <td class="user-list-table-item">
+        Age
+      </td>
+      <td class="user-list-table-item">
+        City
+      </td>
+      <td class="user-list-table-item">
+        Birthdate
+      </td>
+      <td class="user-list-table-item">
+        Biography
+      </td>
+    </tr>
+    <tr *ngFor="let user of searchResultList">
+      <td class="user-list-table-item">
+        {{user.id}}
+      </td>
+      <td class="user-list-table-item">
+        {{user.firstName}}
+      </td>
+      <td class="user-list-table-item">
+        {{user.secondName}}
+      </td>
+      <td class="user-list-table-item">
+        {{user.sex}}
+      </td>
+      <td class="user-list-table-item">
+        {{user.age}}
+      </td>
+      <td class="user-list-table-item">
+        {{user.city}}
+      </td>
+      <td class="user-list-table-item">
+        {{user.birthdate}}
+      </td>
+      <td class="user-list-table-item">
+        {{user.biography}}
+      </td>
+    </tr>
+  </table>
+</div>

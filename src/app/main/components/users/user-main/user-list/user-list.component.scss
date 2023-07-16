@@ -1,0 +1,14 @@
+.user-list-container {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  .user-list-table {
+    width: 100%;
+  }
+
+  .user-list-table-item {
+    padding: 5px;
+    border: solid 1px black;
+  }
+}

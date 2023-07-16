@@ -23,8 +23,9 @@ export class SpinnerService {
   }
 
   disableSpinner() {
-    this.activeRequests -= 1;
-    if (this.activeRequests === 0 && this.spinnerState.isEnabled) {
+    this.activeRequests = Math.max(this.activeRequests - 1, 0);
+    if (this.activeRequests <= 0 && this.spinnerState.isEnabled) {
+      this.activeRequests = 0;
       this.spinnerState.isEnabled = false;
       this.spinnerStateSubject.next(this.spinnerState);
     }

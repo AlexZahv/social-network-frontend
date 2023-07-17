@@ -14,26 +14,32 @@ import {MatDividerModule} from "@angular/material/divider";
 import {SnackbarService} from "../shared/services/snackbar-service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {TimeoutInterceptor} from "./services/timeout-interceptor.service";
+import {RegistrationComponent} from './registration/registration.component';
 
 const routes: Routes = [
-  {path: "", component: LoginComponent}
+  {path: "login", component: LoginComponent},
+  {path: "registration", component: RegistrationComponent},
+  {
+    path: '', redirectTo: '/auth/login', pathMatch: 'full'
+  },
 ];
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent
   ],
-    imports: [
-        CommonModule,
-        RouterModule.forChild(routes),
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        FormsModule,
-        MatButtonModule,
-        SharedModule,
-        MatDividerModule
-    ],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
+    SharedModule,
+    MatDividerModule
+  ],
   providers: [
     AuthService,
     MatSnackBar,
@@ -45,7 +51,7 @@ const routes: Routes = [
     },
     {
       provide: HTTP_INTERCEPTORS,
-      useClass:  TimeoutInterceptor,
+      useClass: TimeoutInterceptor,
       multi: true
     }
   ]

@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, map, Observable} from "rxjs";
-import {UserInfo} from "../model/userInfo";
+import {UserInfo} from "../model/user-info";
+import {UserRegistration} from "../../auth/models/user-registration";
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +24,18 @@ export class UserService {
       .pipe(map((users: Array<any>) => users.map(value => {
         return this.mapUserResponseToModel(value)
       }))).subscribe(value => {
-        this.searchResultList = value;
-        this.searchResultSubject.next(value);
+      this.searchResultList = value;
+      this.searchResultSubject.next(value);
     });
+  }
+
+  registerUser(dto: UserRegistration): Observable<void> {
+    return this.http.post<void>('/api/user/register',
+      {
+        ...dto,
+        "first_name": dto.firstName,
+        "second_name": dto.secondName
+      });
   }
 
   mapUserResponseToModel(value: any): UserInfo {

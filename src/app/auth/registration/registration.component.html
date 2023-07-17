@@ -1,0 +1,181 @@
+<div class="register-main">
+  <div class="register-row">
+    <div class="register-column-container">
+      <form ngForm #registrationForm="ngForm" class="register-container" (ngSubmit)="registrationForm.valid && onSubmit()">
+        <div class="register-container-title-block">
+          <div class="register-container-title">
+            Registration
+          </div>
+        </div>
+        <div class="container register-container-form-block">
+          <div class="row register-container-row">
+            <div class="register-container-input col-sm-6">
+              <mat-form-field
+                appearance="fill"
+                [floatLabel]="'never'"
+              >
+                <input matInput
+                       maxlength="50"
+                       inputmode="text"
+                       placeholder="First name"
+                       [(ngModel)]="registration.firstName"
+                       required
+                       name="firstName"
+                       minlength="3"
+                >
+                <mat-error
+                  *ngIf="!registration || !registration.firstName || registration.firstName.trim() == '' || registration.firstName.trim().length < 3">
+                  Field is required. Minimal length 3 symbols
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="register-container-input col-sm-6">
+              <mat-form-field
+                appearance="fill"
+                [floatLabel]="'never'"
+              >
+                <input matInput
+                       maxlength="50"
+                       inputmode="text"
+                       placeholder="Second name"
+                       [(ngModel)]="registration.secondName"
+                       required
+                       name="secondName"
+                       minlength="3"
+                >
+                <mat-error
+                  *ngIf="!registration || !registration.secondName || registration.secondName.trim() == '' || registration.secondName.trim().length < 3">
+                  Field is required. Minimal length 3 symbols
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row register-container-row">
+            <div class="register-container-input col-sm-6">
+              <mat-form-field
+                appearance="fill"
+                [floatLabel]="'never'"
+              >
+                <input matInput
+                       maxlength="50"
+                       inputmode="text"
+                       type="password"
+                       placeholder="Password"
+                       [(ngModel)]="registration.password"
+                       required
+                       name="password"
+                       minlength="3"
+                >
+                <mat-error
+                  *ngIf="!registration || !registration.password || registration.password.trim() == '' || registration.password.trim().length < 6">
+                  Field is required. Minimal length 6 symbols
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="register-container-input col-sm-6">
+              <mat-form-field
+                appearance="fill"
+                [floatLabel]="'never'"
+              >
+                <input matInput
+                       inputmode="text"
+                       type="number"
+                       placeholder="Age"
+                       [(ngModel)]="registration.age"
+                       required
+                       name="age"
+                       minlength="3"
+                >
+                <mat-error *ngIf="!registration || !registration.age || registration.age <= 0">
+                  Field is required. Must be greater then 0
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row register-container-row">
+            <div class="register-container-input col-sm-6">
+              <mat-form-field
+                appearance="fill"
+                [floatLabel]="'never'"
+              >
+                <input matInput
+                       maxlength="50"
+                       inputmode="text"
+                       placeholder="City"
+                       [(ngModel)]="registration.city"
+                       required
+                       name="city"
+                       minlength="3"
+                >
+                <mat-error
+                  *ngIf="!registration || !registration.city || registration.city.trim() == '' || registration.city.trim().length < 3">
+                  City is required. Minimal length 3 symbols
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="register-container-input col-sm-6">
+              <mat-form-field
+                appearance="fill"
+                [floatLabel]="'never'"
+              >
+                <input matInput
+                       maxlength="500"
+                       inputmode="text"
+                       placeholder="Biography"
+                       [(ngModel)]="registration.biography"
+                       name="biography"
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row register-container-row">
+            <div class="register-container-input col-sm-6">
+              <mat-form-field
+                appearance="fill"
+                [floatLabel]="'never'"
+              >
+                <input matInput
+                       maxlength="500"
+                       inputmode="text"
+                       placeholder="BirthDate, format yyyy-MM-dd"
+                       [(ngModel)]="registration.birthdate"
+                       required
+                       name="birthdate"
+                >
+                <mat-error
+                  *ngIf="!registration || !registration.birthdate || registration.birthdate.trim() == '' || registration.birthdate.trim().length < 10">
+                  Field is required, format yyyy-MM-dd
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="register-container-input col-sm-6">
+              <mat-form-field
+                appearance="fill"
+                [floatLabel]="'never'"
+              >
+                <select matNativeControl required [(ngModel)]="registration.sex" name="sex">
+                  <option value="MALE">Male</option>
+                  <option value="FEMALE">Female</option>
+                </select>
+                <mat-error
+                  *ngIf="!registration || !registration.sex || registration.sex.trim() == '' || registration.sex.trim().length < 3">
+                  Field is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="user-registration-btn-block user-registration-element">
+          <button mat-raised-button class="register-btn primary-btn" type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+

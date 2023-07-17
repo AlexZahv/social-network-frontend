@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../../../service/user.service";
 import {AuthService} from "../../../../../auth/services/auth.service";
-import {UserInfo} from "../../../../model/userInfo";
+import {UserInfo} from "../../../../model/user-info";
 
 @Component({
   selector: 'app-current-user-component',
